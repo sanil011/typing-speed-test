@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.text-primary {
+  opacity: 1;
+}
+
+.text-error {
+  opacity: 1;
+  color: red;
+  text-decoration: underline;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
