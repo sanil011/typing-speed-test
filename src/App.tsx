@@ -16,8 +16,9 @@ const TEST_DURATION = 60;
 
 
 function App() {
-  const divRef = useRef(null);
-  const allWords = useRef([]);
+  const divRef = useRef<HTMLDivElement | null>(null);
+  const allWords = useRef<HTMLSpanElement[] | null[]>([]);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const words = TARGET_TEXT.split("");
 
@@ -39,7 +40,6 @@ function App() {
   const [playSpace] = useSound('/space.mp3');
   const [playWrong] = useSound('/wrong-type.mp3');
   const [playCorrect] = useSound('/correct-type.mp3');
-  const timerRef = useRef(null);
 
   const timeCompleted = () => {
     const chars = typedCharsRef.current;
@@ -62,7 +62,9 @@ function App() {
     })
 
     setIsCompleted(true);
-    clearInterval(timerRef.current);
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
     timerRef.current = null;
   }
 
@@ -105,7 +107,7 @@ function App() {
       typedCharsRef.current = updated;
       return updated;
     });
-    const elem = allWords.current[typeCount];
+    const elem = allWords.current[typeCount] as HTMLElement;
     const keyWord = e.key;
 
     setTypeCount((prev) => prev + 1);
@@ -135,7 +137,7 @@ function App() {
 
 
   useEffect(() => {
-    const el = allWords.current[typeCount];
+    const el = allWords.current[typeCount] as HTMLElement;
 
     if (!el) return;
 
@@ -154,7 +156,7 @@ function App() {
 
   useEffect(() => {
     if (!isCompleted) {
-      divRef.current.focus();
+      divRef?.current?.focus();
     }
   }, [isCompleted])
 
