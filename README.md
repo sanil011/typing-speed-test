@@ -1,74 +1,35 @@
-# React + TypeScript + Vite
+# ⌨️ Typing Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small typing speed test I built for fun, living in the **Crafts** section of my portfolio.
 
-Currently, two official plugins are available:
+**[Try it live →](https://portfolio-sanil011.vercel.app/components/typingTest)**  ·  [See other crafts](https://portfolio-sanil011.vercel.app/components)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Why
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+No big reason. I wanted to see how a typing test feels to build from scratch: tracking keystrokes, handling mistakes, and making the caret feel smooth. It's one of a few small UI experiments in my portfolio, alongside an image comparison slider, an OTP input, and a dialog.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<!-- ✏️ Edit this list to match what you actually built -->
+- Live WPM and accuracy while you type
+- Per-character feedback: correct, incorrect, and untyped states
+- Smooth moving caret
+- Timer that starts on the first keystroke
+- Results screen with a quick restart
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [React](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vite.dev)
+- [Tailwind CSS v4](https://tailwindcss.com) via `@tailwindcss/vite`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## More crafts
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This is part of my small collection of UI experiments. Check out the rest at
+**[portfolio-sanil011.vercel.app/components](https://portfolio-sanil011.vercel.app/components)**.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-# typing-test
+Made by [Sanil](https://github.com/sanil011) ✌️
