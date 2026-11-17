@@ -4,6 +4,8 @@ A small typing speed test I built for fun, living in the **Crafts** section of m
 
 **[Try it live →](https://portfolio-sanil011.vercel.app/components/typingTest)**  ·  [See other crafts](https://portfolio-sanil011.vercel.app/components)
 
+<img width="1026" height="464" alt="image" src="https://github.com/user-attachments/assets/2113e8a5-2336-4679-879f-a55a68bf2ea1" />
+
 ---
 
 ## Why
